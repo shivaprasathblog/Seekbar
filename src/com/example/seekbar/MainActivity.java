@@ -8,7 +8,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class MainActivity extends Activity {
 
-	//Defining the seekbar
+	//STEP 1 : Defining the seekbar
 	SeekBar sb;
 	
 	@Override
@@ -17,16 +17,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		//Refer the seekbar from xml with their id
+		//STEP 2 : Refer the seekbar from xml with their id
 		sb = (SeekBar)findViewById(R.id.seekBar1);
 		
-		//using on seekbarchange listener
+		//STEP 3 : using on seekbarchange listener
 		sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener()
 		{
 			
 		    //setting intial progress as 0
 	            int currentprogress = 0;
 	 
+	           //This Method is called when the seekbar undergoes tracking any changes
 	            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
 	             //public abstract void onProgressChanged (SeekBar seekBar, int progress, boolean fromUser) 
 	            {
@@ -39,11 +40,12 @@ public class MainActivity extends Activity {
 	                currentprogress = progress;
 	            }
 	 
+		 //This Method is called seekbar starts tracking
 	            public void onStartTrackingTouch(SeekBar seekBar)
 	            {
 	                // TODO Auto-generated method stub
 	            }
-	 
+		 //This Method is called seekbar stops tracking
 	            public void onStopTrackingTouch(SeekBar seekBar) 
 	            {										//Add +"%" to get the progress value in percentage 									//Add +"%" to get the progress value in percentage 
 	            	/**Toast.makeText(MainActivity.this,"Seek bar progress: "+currentprogress+"%",Toast.LENGTH_SHORT).show();**/
